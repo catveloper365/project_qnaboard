@@ -1,0 +1,4 @@
+# spring profiles setting
+spring:
+  profiles:
+    active: dev
