@@ -1,0 +1,4 @@
+# spring profiles setting
+spring:
+  profiles:
+    active: local # local profile을 기본 활성화

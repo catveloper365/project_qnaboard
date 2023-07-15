@@ -1,0 +1,29 @@
+# 애플리케이션 포트 설정
+server:
+  port: 80 # 포트 생략 가능해짐
+
+spring:
+
+  #데이터베이스 커넥션 설정
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/qnaboard
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver # 로컬 개발용 DB로 h2 사용
+
+  # JPA 관련 설정
+  jpa:
+    hibernate:
+      ddl-auto: create # 실행 시점에 테이블 다 지우고 다시 생성
+    properties:
+      hibernate:
+        format_sql: true # 자동 생성된 SQL을 포맷팅해서 콘솔에 출력
+
+    database-platform: org.hibernate.dialect.H2Dialect # 사용할 DB 방언 설정
+
+# log level 정하기
+logging:
+  level:
+    org.hibernate.SQL: debug # hibernate SQL 로그를 debug 모드로 출력
+    org.hibernate.type: trace # 쿼리 파라미터 로그 출력
+
